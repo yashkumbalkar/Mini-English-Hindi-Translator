@@ -178,7 +178,7 @@ input_text = st.text_area("Enter text", height=100, placeholder="Type here...")
 
 # Predict button
 if st.button("Translate"):
-    if input_text.strip():
+    if input_text:
         with st.spinner("Translating..."):
             decoder_output, attn_weights = evluate(encoder, decoder, input_text, features_vocab, target_vocab)
             translate = ''
@@ -186,12 +186,10 @@ if st.button("Translate"):
                 if i == '<pad>':
                     break
                 translate = translate + i + ' '
+            st.write(f"Hindi Translation : {translate}") 
     else:
         st.warning("Please enter text to translate.")
 
-# Display output in a text area
-st.markdown("### Hindi Translation:")
-st.text_area(" ", value=translate, height=100, disabled=True)
 
 
 
