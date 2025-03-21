@@ -129,7 +129,7 @@ def evaluate(encoder, decoder, input_text, feature_vocab, target_vocab):
         tokenized_english_txt_test = tokenizer_eng(preprocess)
 
         english_indices_test = tokens_to_indices_test([tokenized_english_txt_test], features_vocab)
-        input_tensor = torch.LongTensor(english_indices_test[0]).to(device).reshape(1,len(input_text.split()))
+        input_tensor = torch.LongTensor(english_indices_test[0]).to(device).reshape(1,len(preprocess.split()))
 
         encoder_outputs, encoder_hidden = encoder(input_tensor)
         decoder_outputs, decoder_hidden, decoder_attn = decoder(encoder_outputs, encoder_hidden)
@@ -173,7 +173,7 @@ st.markdown(
 
 
 # User input text box
-input_text = st.text_area("Enter text", height=100, placeholder="Type here...")
+input_text = st.text_area("Enter text", height=50, placeholder="Type here...")
 
 
 # Predict button
@@ -186,12 +186,13 @@ if st.button("Translate"):
                 if i == '<pad>':
                     break
                 translate = translate + i + ' '
-            st.write(f"Hindi Translation : {translate}") 
+            #st.write(f"Hindi Translation : {translate}") 
     else:
         st.warning("Please enter text to translate.")
 
-
-
+# Display output in a text area
+st.markdown("### Hindi Translation:")
+st.text_area(" ", value=translate, height=50, disabled=True)
 
 
 
