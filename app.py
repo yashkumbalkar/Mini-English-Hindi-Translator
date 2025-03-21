@@ -180,7 +180,7 @@ input_text = st.text_area("Enter text", height=100, placeholder="Type here...")
 if st.button("Translate"):
     if input_text:
         with st.spinner("Translating..."):
-            decoder_output, attn_weights = evluate(encoder, decoder, input_text, features_vocab, target_vocab)
+            decoder_output, attn_weights = evaluate(encoder, decoder, input_text, features_vocab, target_vocab)
             translate = ''
             for i in decoder_output:
                 if i == '<pad>':
