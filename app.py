@@ -190,9 +190,7 @@ if st.button("Translate"):
     else:
         st.warning("Please enter text to translate.")
 
-# Display output in a text area
-st.markdown("### Hindi Translation:")
-st.text_area(" ", value=translate, height=100, disabled=True)
+
 
 
 
