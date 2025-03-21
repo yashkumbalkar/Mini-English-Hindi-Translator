@@ -129,7 +129,7 @@ def evaluate(encoder, decoder, input_text, feature_vocab, target_vocab):
         tokenized_english_txt_test = tokenizer_eng(preprocess)
 
         english_indices_test = tokens_to_indices_test([tokenized_english_txt_test], features_vocab)
-        input_tensor = torch.LongTensor(english_indices_test[0]).to(device).reshape(1,input_text.len(.split()))
+        input_tensor = torch.LongTensor(english_indices_test[0]).to(device).reshape(1,len(input_text.split()))
 
         encoder_outputs, encoder_hidden = encoder(input_tensor)
         decoder_outputs, decoder_hidden, decoder_attn = decoder(encoder_outputs, encoder_hidden)
