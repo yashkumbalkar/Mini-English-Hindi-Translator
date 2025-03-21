@@ -173,7 +173,7 @@ st.markdown(
 
 
 # User input text box
-input_text = st.text_area("Enter text", height=50, placeholder="Type here...")
+input_text = st.text_area("Enter text", height=100, placeholder="Type here...")
 
 
 # Predict button
@@ -191,8 +191,8 @@ if st.button("Translate"):
         st.warning("Please enter text to translate.")
 
 # Display output in a text area
-# st.markdown("### Hindi Translation:")
-# st.text_area(" ", value=translate, height=50, disabled=True)
+st.markdown("### Hindi Translation:")
+st.text_area(" ", value=translate, height=100, disabled=True)
 
 
 
