@@ -186,13 +186,13 @@ if st.button("Translate"):
                 if i == '<pad>':
                     break
                 translate = translate + i + ' '
-            # st.write(f"Hindi Translation : {translate}") 
+            st.write(f"Hindi Translation : {translate}") 
     else:
         st.warning("Please enter text to translate.")
 
 # Display output in a text area
-st.markdown("### Hindi Translation:")
-st.text_area(" ", value=translate, height=50, disabled=True)
+# st.markdown("### Hindi Translation:")
+# st.text_area(" ", value=translate, height=50, disabled=True)
 
 
 
