@@ -151,11 +151,9 @@ def evaluate(encoder, decoder, input_text, feature_vocab, target_vocab):
 # Streamlit UI
 st.set_page_config(page_title="English to Hindi Translator", layout="centered")
 
-st.title("English to Hindi Translator")
-st.write("Enter a sequence of words in English to translate it into Hindi")
 
 st.markdown(
-    "<h1 style='text-align: center; color: #4CAF50;'>English to Hindi Translator</h1>",
+    "<h1 style='text-align: center; color: #4CAF50;'>English to Hindi Translator using Encoder-Decoder</h1>",
     unsafe_allow_html=True,
 )
 
@@ -163,10 +161,10 @@ st.markdown(
 st.markdown(
     """
     ### Welcome to the Translator
-    This application translates the english sentence in a hindi sentence based on the text you provide. Powered by a trained Encoder-Decoder model.
+    This application translates the english sentence into a hindi sentence based on the text you provide. Powered by a trained Encoder-Decoder model.
 
     ### How to Use:
-    1. Type a sentence or a few words.
+    1. Type a few words like Hello, how are you.
     2. Click "Translate".
     """
 )
@@ -193,7 +191,7 @@ if st.button("Translate"):
 
 # Display output in a text area
 st.markdown("### Hindi Translation:")
-st.text_area(" ", value=translated_text, height=100, disabled=True)
+st.text_area(" ", value=translate, height=100, disabled=True)
 
 
 
